@@ -14,13 +14,13 @@ int main() {
 
   static_assert(LPL_CHECK(LPL_PROBE) == 1);
   static_assert(LPL_CHECK(blah) == 0); // 0
-  static_assert(LPL_IS_PARENTHESIS((char)) == 1);
+  static_assert(LPL_IS_PARENTHESES((char)) == 1);
 
-  static_assert(LPL_IS_PARENTHESIS(()) == 1);
-  static_assert(LPL_IS_PARENTHESIS(blah) == 0);
+  static_assert(LPL_IS_PARENTHESES(()) == 1);
+  static_assert(LPL_IS_PARENTHESES(blah) == 0);
 
-  static_assert(LPL_IS_NOT_PARENTHESIS(()) == 0);
-  static_assert(LPL_IS_NOT_PARENTHESIS(blah) == 1);
+  static_assert(LPL_IS_NOT_PARENTHESES(()) == 0);
+  static_assert(LPL_IS_NOT_PARENTHESES(blah) == 1);
 
   static_assert(A() == 125);
   static_assert(LPL_EVAL(LPL_DEFER_TWICE(A)()) == 125);
@@ -37,8 +37,8 @@ int main() {
 
   static_assert(LPL_WHEN(1)(1) == 1);
 
-  static_assert(LPL_AND(LPL_IS_PARENTHESIS(())) == 1);
-  static_assert(LPL_AND(LPL_IS_PARENTHESIS(x)) == 0);
+  static_assert(LPL_AND(LPL_IS_PARENTHESES(())) == 1);
+  static_assert(LPL_AND(LPL_IS_PARENTHESES(x)) == 0);
   static_assert(LPL_AND(1, 3, 1, 4, 5, 1) == 1);
   static_assert(LPL_AND(1, 0) == 0);
   static_assert(LPL_AND(0, 1, 3, 1, 4, 5, 1) == 0);

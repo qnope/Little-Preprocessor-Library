@@ -18,12 +18,12 @@
   LPL_EVAL(LPL_WHILE_IMPL(x, predicat, macroToApplyToX, motif))
 
 // MAP
-#define LPL_MAP_IMPL_PARENTHESIS_1(...)
-#define LPL_MAP_IMPL_PARENTHESIS_0(macroToApply, x, ...)                       \
+#define LPL_MAP_IMPL_PARENTHESES_1(...)
+#define LPL_MAP_IMPL_PARENTHESES_0(macroToApply, x, ...)                       \
   macroToApply(x) LPL_DEFER(LPL_MAP_IMPL_I)()(macroToApply, __VA_ARGS__)
 
 #define LPL_MAP_IMPL(macroToApply, x, ...)                                     \
-  LPL_CAT(LPL_MAP_IMPL_PARENTHESIS_, LPL_IS_PARENTHESIS(x))                    \
+  LPL_CAT(LPL_MAP_IMPL_PARENTHESES_, LPL_IS_PARENTHESES(x))                    \
   (macroToApply, x, __VA_ARGS__)
 
 #define LPL_MAP_IMPL_I() LPL_MAP_IMPL
