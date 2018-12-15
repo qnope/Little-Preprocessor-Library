@@ -1,5 +1,7 @@
 #pragma once
 
+#define LPL_IDENTITY(x) x
+
 #define EMPTY()
 #define LPL_EXPAND(...) __VA_ARGS__
 #define LPL_EAT(...)
@@ -18,3 +20,6 @@
 #define LPL_HEAD(x, ...) x
 #define LPL_SECOND(x, y, ...) y
 #define LPL_TAIL(x, ...) __VA_ARGS__
+
+#define LPL_STRIP_PARENTHESIS_IMPL(...) __VA_ARGS__
+#define LPL_STRIP_PARENTHESIS(x) LPL_STRIP_PARENTHESIS_IMPL x
